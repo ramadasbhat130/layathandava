@@ -1,0 +1,65 @@
+body {
+  background: url(../img/img12.jpg) repeat top left;
+  color: #333;
+  font-size: 11px;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none; color: #F00;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  padding-top: 20px;
+  text-align: center;
+}
+
+h2 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+p {
+  border: 0px solid #666;
+  overflow: hidden;
+  padding: 0px 0 ;
+  text-align: center;
+}
+
+.container {
+  background-color: ;
+  background-repeat: repeat-y;
+  margin-bottom: 20px;
+}
+
+.container {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 995px) {
+	.container {
+		
+	}
+	
+	
+}
+
+@media only screen and (max-width: 767px) {
+	.container {
+		background: #6afd7f;
+	}
+}
+
+@media only screen and (max-width: 479px) {
+	.container.demo {
+		background: #e16bfe;
+	}
+}
