@@ -35,7 +35,7 @@ if(isset($_SESSION["visited"])){
 	<link rel="stylesheet" href="css/grid.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/demo.css">
-	<link rel="icon" type="image/png" href="img/falem3.png">
+	<link rel="icon" type="image/png" href="img/flame-with-hexgon3.png">
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="js/scripts.js"></script>
@@ -67,7 +67,7 @@ if(isset($_SESSION["visited"])){
   
   <div class="grid_20">
     <div class="bg">
-    <img src="img/newlayabg.jpg" width="1000" >
+    <img src="img/newlayabg1.png" width="1000" >
    </div>
   </div>
   

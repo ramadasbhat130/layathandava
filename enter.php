@@ -6,5 +6,6 @@
 </head>
 
 <body>
+<img src="img/flame-with-hexgon3.png"/>
 </body>
 </html>
