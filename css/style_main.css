@@ -16,10 +16,8 @@ Copyright 2013, Josh Cope
    ========================================================================== */
 
 /* Tablet Portrait size to Base 996px */
-@media only screen and (min-width: 768px) and (max-width: 995px) { .enter{background:rgba(0,0,0,0.5);  -webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;border-radius:5px; -webkit-box-shadow: #F30 0px 0px 10px;-o-box-shadow:#F30 0px 0px 10px;-moz-box-shadow:#F30 0px 0px 10px;box-shadow:#F30 0px 0px 10px; border:#F30 solid 1px;  color:#F30; width:306px;  height:50px;text-align: center; margin-top:40px;  }
-.footer{background-color: rgba(0, 0, 0, 0.5); color:#FFFFFF; height:40px;  width:755px; border-top:#6CEC7C solid 1px; }
+@media only screen and (min-width: 768px) and (max-width: 995px) {}
 
-}
 /* All Mobile Sizes */
 @media only screen and (max-width: 767px) {}
 

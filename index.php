@@ -30,11 +30,12 @@ if(isset($_SESSION["visited"])){
 
 	<meta name="viewport" content="width=device-width">
 
-     <link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/base.css">
-	<link rel="stylesheet" href="css/grid.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/demo.css">
+     <link rel="stylesheet" href="css/normalize_intro.css">
+     <link rel="stylesheet" href="css/style_intro.css">
+	<link rel="stylesheet" href="css/base_intro.css">
+	<link rel="stylesheet" href="css/grid_intro.css">
+	
+	<link rel="stylesheet" href="css/demo_intro.css">
 	<link rel="icon" type="image/png" href="img/flame-with-hexgon3.png">
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -134,7 +135,8 @@ if(isset($_SESSION["visited"])){
      
      <div class="grid_12 ">
      <div class="footer">
-<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0"><tr>
+     
+<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0"><tr>
   <td width="30%" valign="middle" align="center">
  <a href="https://www.facebook.com/ramadasbhat" target="_blank" title="Me on Facebook"><img src="core/flogo.png" height="30"></a> &nbsp; <a href="https://plus.google.com/113241305087469935578" target="_blank">
   <img src="core/glogo.png" width="30"></a> &nbsp; <a href="http://twitter.com/#!/ramadasbhat130" target="_blank"><img src="core/tlogo.png" height="30"></a> &nbsp; <a href="http://www.youtube.com/user/ramadasbhat" target="_blank"> <img src="core/ylogo.png" height="26"></a>
@@ -160,6 +162,7 @@ if(isset($_SESSION["visited"])){
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     
     </td>
+    
     
   <td width="100">
   <div id="fb-root"></div>
@@ -187,5 +190,16 @@ if(isset($_SESSION["visited"])){
 
     
   </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </body>
 </html>
