@@ -21,6 +21,176 @@ if(isset($_SESSION["visited"])){
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	var pageTitle = document.title; //HTML page title
+	var pageUrl = location.href; //Location of the page
+
+	
+	//user hovers on the share button	
+	$('#share-wrapper li').hover(function() {
+		var hoverEl = $(this); //get element
+		
+		//browsers with width > 699 get button slide effect
+		if($(window).width() > 699) { 
+			if (hoverEl.hasClass('visible')){
+				hoverEl.animate({"margin-left":"-117px"}, "fast").removeClass('visible');
+			} else {
+				hoverEl.animate({"margin-left":"0px"}, "fast").addClass('visible');
+			}
+		}
+	});
+		
+	//user clicks on a share button
+	$('.button-wrap').click(function(event) {
+			var shareName = $(this).attr('class').split(' ')[0]; //get the first class name of clicked element
+			
+			switch (shareName) //switch to different links based on different social name
+			{
+				case 'facebook':
+					var openLink = 'https://www.facebook.com/ramadasbhat'
+					break;
+				case 'twitter':
+					var openLink = 'https://twitter.com/ramadasbhat130'
+					break;
+				case 'youtube':
+					var openLink = 'https://www.youtube.com/user/ramadasbhat'
+					break;
+				case 'stumbleupon':
+					var openLink = 'http://www.stumbleupon.com/submit?url=' + encodeURIComponent(pageUrl) + '&amp;title=' + encodeURIComponent(pageTitle);
+					break;
+				case 'delicious':
+					var openLink = 'http://del.icio.us/post?url=' + encodeURIComponent(pageUrl) + '&amp;title=' + encodeURIComponent(pageTitle);
+					break;
+				case 'google':
+					var openLink = 'https://plus.google.com/+RAMADASBHAT/' 
+					break;
+				case 'email':
+					var openLink = 'mailto:?subject=' + pageTitle + '&body=Found this useful link for you : ' + pageUrl;
+					break;
+			}
+		
+		//Parameters for the Popup window
+		winWidth 	= 650;	
+		winHeight	= 450;
+		winLeft   	= ($(window).width()  - winWidth)  / 2,
+		winTop    	= ($(window).height() - winHeight) / 2,	
+		winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
+		
+		//open Popup window and redirect user to share website.
+		window.open(openLink,'Share This Link',winOptions);
+		return false;
+	});
+});
+</script>
+<style>
+
+
+/* Share button */
+
+/* outer wrapper */
+#share-wrapper {
+	margin-top: -300px;
+	position:fixed;
+	left: 0;
+}
+
+/* inner wrapper */
+#share-wrapper ul.share-inner-wrp{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* the list */
+#share-wrapper li.button-wrap {
+	background: url(img/img12.jpg);
+	padding: 0px 0px 0px 10px;
+	display: block;
+	width: 140px;
+	margin: 0px 0px 1px -117px;
+}
+
+/* share link */
+#share-wrapper li.button-wrap > a {
+	padding-right: 60px;
+	height: 32px;
+	display: block;
+	line-height: 32px;
+	font-weight: bold;
+	color: #FFF;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+/* background image for each link */
+#share-wrapper .facebook > a{
+	background: url(img/facebook.jpg) no-repeat right;
+}
+#share-wrapper .twitter > a{
+	background: url(img/twitter.jpg) no-repeat right;
+}
+#share-wrapper .youtube > a{
+	background: url(img/Youtube-icon.png) no-repeat right;
+}
+.stumbleupon > a{
+	background: url(buttons/stumbleupon.jpg) no-repeat right;
+}
+#share-wrapper .delicious > a{
+	background: url(img/delicious.jpg) no-repeat right;
+}
+#share-wrapper .google > a{
+	background: url(img/google.jpg) no-repeat right;
+}
+
+
+/* small screen */
+@media all and (max-width: 699px) {
+	.tiwtter{ display:none;}
+	.fb{ display:none;}
+	.g{ display:none;}
+	
+	#share-wrapper {
+		bottom: 0;
+		position: 100px;;
+		padding: 5px 5px 10px 5px;
+		background: url(img/img12.jpg);
+		width: 100%;
+		margin: 0px;
+		-webkit-box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+		-moz-box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
+		-o-box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
+		box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+	}
+	#share-wrapper ul.share-inner-wrp {
+		list-style: none;
+		margin: 0px auto;
+		padding: 0px;
+		text-align: center;
+		overflow: auto;
+	}
+	#share-wrapper li.button-wrap {
+		display: inline-block;
+		width: 52px!important;
+		margin : 0px;
+		padding: 0px;
+		margin-left:0px!important;
+	}
+	#share-wrapper li.button-wrap > a {
+		height: 32px;
+		display: inline-block;
+		text-indent: -10000px;
+		width: 32px;
+		padding-right: 0;
+		float: right;
+	}
+}
+
+
+</style>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -134,18 +304,11 @@ if(isset($_SESSION["visited"])){
   
      
      <div class="grid_12 ">
-     <div class="footer">
-     
-<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0"><tr>
-  <td width="30%" valign="middle" align="center">
- <a href="https://www.facebook.com/ramadasbhat" target="_blank" title="Me on Facebook"><img src="core/flogo.png" height="30"></a> &nbsp; <a href="https://plus.google.com/113241305087469935578" target="_blank">
-  <img src="core/glogo.png" width="30"></a> &nbsp; <a href="http://twitter.com/#!/ramadasbhat130" target="_blank"><img src="core/tlogo.png" height="30"></a> &nbsp; <a href="http://www.youtube.com/user/ramadasbhat" target="_blank"> <img src="core/ylogo.png" height="26"></a>
-  </td>
-
-  <td width="10%" >
    
-    <!-- Place this tag where you want the +1 button to render. -->
-<div class="g-plusone" data-size="medium"></div>
+<div id="share-wrapper">
+    <ul class="share-inner-wrp">
+     <!-- Google -->
+        <li class="google button-wrap"><a href="#">Plus Share</a><div class="g"><div class="g-plusone" data-size="medium"></div>
 
 <!-- Place this tag after the last +1 button tag. -->
 <script type="text/javascript">
@@ -154,49 +317,45 @@ if(isset($_SESSION["visited"])){
     po.src = 'https://apis.google.com/js/plusone.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
-</script>
-    
-    </td>
-    <td align="center" width="10%" valign="middle">
-    <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Layathandava">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    
-    </td>
-    
-    
-  <td width="100">
-  <div id="fb-root"></div>
+</script></div></li>
+        <!-- Facebook -->
+        <li class="facebook button-wrap"><a href="#">Facebook</a> <div class="fb"><div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=370991952956142";
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<div class="fb-like" data-href="https://www.facebook.com/Layathandava" data-send="true" data-layout="button_count" data-height="40" data-width="50" data-show-faces="false" data-font="arial"></div>
-    </td>
-   
-    
+}(document, 'script', 'facebook-jssdk'));</script><div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div></div></li>
+        
+        <!-- Twitter -->
+        <li class="twitter button-wrap"><a href="#">Tweet</a> <div class="tiwtter"><a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Layathandava">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div></li>
+        
+         <!-- Digg -->
+        <li class="youtube button-wrap"><a href="#">You Tube</a></li>
+        
+        <!-- Stumbleupon -->
+        <li class="stumbleupon button-wrap"></li>
+      
+         <!-- Delicious -->
+        <li class="delicious button-wrap"></li>
+        
+       
+        
+        <!-- Email -->
+       
+    </ul>
+</div>
+
+
+
+</div>
   
-  <td width="10%" align="center" valign="middle">
-&copy;2010-<? echo date("Y");?>
-  </td>
-  <td>Visitors:-<? echo $_SESSION["visited"];?></td>
-  
-</tr></table>
-  </div>
-  </div>
   
 
-    
-  </div>
   
-  
-  
-  
-  
-  
-  
+
   
   
   
